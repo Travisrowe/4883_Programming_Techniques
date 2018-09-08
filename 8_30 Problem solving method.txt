@@ -1,0 +1,20 @@
+1. Read Problem
+2. Read in data & Write out data
+3. Think and design your algorithm on paper
+4. Is the complexity of 3 good?
+5. If not go to 3
+6. Code algorithm
+7. Run and test on a lot of data
+
+Sorting is nlog(n) complexity
+    STL has sort algorithm already
+    
+Reading in a file after creating a project
+    for reference: UVa submission format on Simpson's page
+    Add text file to project
+    Project > [name] Properties > Debugging > Command Arguments > "< Data.txt"
+    
+    Need to include <iostream> and use cin, cout to read write from file
+    
+Precompiled headers is in
+    Project > [name] Properties > Precompiled Headers > Use Precompiled Headers > No

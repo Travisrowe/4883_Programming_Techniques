@@ -1,0 +1,28 @@
+ASCII - American Standard Code for Information Interchange
+48 = 0
+65 = A
+97 = a
+
+Carriage return goes to front of line
+Line feed goes to next line 
+
+0-127 is well-defined in ASCII, 128-255 is extended with graphics characters or some shit.
+
+WERTY problem
+string Alphabet = "ABCDE....01234..."; //do this in the order it appears in the ASCII table
+string WERTY = "_VXSW....9_123...";
+
+cin >> letter;
+cout << WERTY[char(letter) - 65];
+
+
+Decoder problem
+Use ASCII table to find out the offset from the coded message to the message
+char('C' - 7);
+
+
+Group Reverse
+using stl string methods
+copy()
+reverse algorithm
+replace()
