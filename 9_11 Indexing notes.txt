@@ -1,0 +1,36 @@
+Rotated Squares
+    cin >> N >> n;
+    while (N != n != 0)
+    vector<vector<char>> A(N, vector<char>(N));
+    for(int r = 0; r < n; r++)
+    {
+        for(int c = 0; c < n; c++)
+        {
+            cin >> A[r][c];
+        }
+    }
+    
+    Rotate(vector<vector<char>> A)
+    {
+                        /*  X   B   Y   Z   X
+                         *  Z   Q   R   Q   B
+                         *  Y   R   D   R   Y
+                         *  B   Q   R   Q   Z
+                         *  X   Z   Y   B   X
+                         
+                         //Only seven unique letters. Each letter moves to its twins' spaces.
+        vector<vector<char>> B(A.size());
+        //A[r, c] rotates to B[c, N-r-1]
+    }
+    
+    //Look for copy squares, a, inside of the matrix A
+    CheckCopy()
+    {
+        for(int r = 0; r < N - n - 1; r++)
+        {
+            for(int c = 0; c < N - n - 1; c++)
+            {
+                
+            }
+        }
+    }
