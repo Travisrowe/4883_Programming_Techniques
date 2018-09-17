@@ -1,0 +1,45 @@
+Square a matrix
+    void SQ(Mat inp, Mat outp) //in an 1000x1000 matrix, you copy 1 million integers each time this function is called
+                          //so pass by reference instead. It's also good practice to have the input variable be const
+                          //so it doesn't get changed
+    {
+    }
+    void SQ(const Mat& inp, Mat& outp)
+    {
+    }
+    
+    endl; is a little slower than '\n'
+    but if you code endl then write at the top of the program
+#define endl = '\n'
+    then you don't have to type '\n' every time, but you still get the speed boost.
+    
+    main()  //This is supposedly faster... why?
+    {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+    }
+    
+Flip-Flop the Squarelotron
+    Up-Down Flip 
+        You have a square, let's say 5x5. Define the rings in the square, outer ring, inner ring, etc.
+        Let's say you have the outer ring is ring 0, the next inner ring is 1 and so on
+        
+        for(int r = 0; ring < numRing; ring++)
+        {
+            //flip algorithm, maybe add ring to the index and subtract ring from the size to find the
+            //first edge and the last edge
+        }
+        
+        for input C, use a switch statement to call the type of flip to perform
+        if a ring is 1x1, no functions need to be performed on it at all.
+        
+    Diagonal Flip
+        to grab the bottom half of the square, because you don't need any of where r = c to change 
+        for(int r = 1 + ring; r < N - ring; r++)
+        {
+            for(int c = 0 + ring; c < r; c++)
+            {
+                //(r, c) swaps with (c, r)
+                //there is a swap function you can call
+            }
+        }
