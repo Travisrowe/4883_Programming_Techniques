@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\travis\documents\school_related\4883_programming_techniques\parenthesesbalance\parenthesesbalance\source.cpp(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\parenthesesbalance\parenthesesbalance\source.cpp(21): warning C4101: 'c': unreferenced local variable
+  ParenthesesBalance.vcxproj -> C:\Users\Travis\Documents\School_Related\4883_Programming_Techniques\ParenthesesBalance\Debug\ParenthesesBalance.exe

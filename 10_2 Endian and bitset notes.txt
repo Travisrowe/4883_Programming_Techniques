@@ -1,0 +1,61 @@
+Three Little Endian problem
+    Little Endian and Big Endian denotes which way a binary number goes. That is, is the left-most bit equal to 1(base 10) or is the right-most?
+
+    long N, M;
+    while(cin >> N)
+    {
+        bitset<32>numBig(N);
+        bitset<32>numLittle;
+        for(int i = 0; i < 8; i++) // sections of bits are 8 bits long
+        {
+            numLittle[24 + i] = numBig[i];
+            numLittle[16 + i] = numBig[i + 8];
+        }
+        M = numLittle.toULong();
+        cout << N << " converts to " << M << '\n';
+    }
+    return 0;
+    
+Splitting numbers
+    i indices are only on 1 bits
+    so you have 1 0 1 1 0 1 0 0 1 1
+                i6  i5i4  i3    i2i1
+                
+        even indices go into a, odd indices go into b, 
+        only 1 bits need to be checked because 0 bits have no value
+        
+Sets
+    used to insert dynamic variable types, including full arrays, does not seem to have duplicates...
+    MultiSet has duplicates //is this true?
+    CleanSet has no duplicates
+    
+    if you made your own Set class, use a red-black tree (AVL tree)
+        Day-Stout-Warren algorithm - balancing tree algorithm
+        
+range loop: for(auto i:A)
+
+CD problem 11849
+    Use Sets
+    // A union B = A + B - A intersect B
+    Set Jack_Jill //has N + M - #duplicates cds
+    cin >> n >> m;
+    while(!(n == 0 && m == 0))
+    {
+        cout << Jack_Jill.count - n - m;
+    }
+    
+Magic Numbers
+    s1 / s2 = N
+    s1 = N * s2
+    if s1 and N and s2 have no repeating digits within themselves, then this is an answer.
+    if(NoRepeatingDigits(s2))
+    
+    NoRepeatingDigits(int N)
+    {
+        use bitset
+        while(N > 0)
+        {
+        bitset[N%10] = 1;
+        N = N / 10;
+        }
+    }

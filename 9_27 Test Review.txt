@@ -1,0 +1,30 @@
+Test problem 2, get the max of a line of integers
+    int x;
+    cin >> line;
+    streamstring ss(line); //use ss like cin to read in integers, so then you have
+    ss >> x;
+    
+Problem 3: RingSum
+    Use an & when you pass a matrix into a function!
+    
+Problem 4: Vowels have Value
+    Switch statement is order(N) vs ASCII table is order(1)
+    
+    string vowels = "AEIOU"
+;    vector<char> ASCIItbl(128, 0) //set all to 0
+    for(int i = 0; i < 5l i++)
+        Table[vowels[i]] = value[i]; //only vowels have values now, all else are 0
+        
+Problem 5: Consecutive products
+    Don't need to set a length, you just set a start position i and an end position j
+    
+    for(int i = 0; i < N; i++)
+        product = 1;
+        for(int j = i; j < N; j++)
+            product *= A[j];
+            if(product > maxProd)
+                maxProd = product;
+                
+    ALSO! integer only allows 9 digits
+        long allows some shit.
+        long long allows 18 digits! which is what was needed for this problem

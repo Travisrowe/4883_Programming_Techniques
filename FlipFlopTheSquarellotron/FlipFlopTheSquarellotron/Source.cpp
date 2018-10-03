@@ -11,9 +11,10 @@ void Print(vector<vector<int>> square, int N)
 	{
 		for (int c = 0; c < N; c++)
 		{
-			cout << square[r][c] << " ";
+			cout << square[r][c];
+			if (c == N - 1) cout << '\n';
+			else cout << ' ';
 		}
-		cout << endl;
 	}
 }
 

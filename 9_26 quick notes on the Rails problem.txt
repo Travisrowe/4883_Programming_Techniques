@@ -1,0 +1,13 @@
+Rails problem
+    Coaches get pushed onto the stack in sequential order, but not necessarily all at the start of the problem (they can stay on the rail and move themselves to the station)
+    So the stack is kept in the Station of the picture.
+    
+    So we can read in the entire requested order at once, E.G. 5 4 1 2 3, then push the freight onto the track in sequential order until we reach the first number in the required order.
+    We pop that number off
+    if(stack.top == nextNum)
+        stack.pop
+    else
+        push until we find nextNum
+    end-loop
+    if(!stack.empty()) cout << "No" << endl;
+    else cout << "Yes" << endl;

@@ -1,3 +1,26 @@
 ﻿  GroupReverse.cpp
-c:\users\travis\documents\school related\4883_programming_techniques\groupreverse\groupreverse\groupreverse.cpp(22): warning C4018: '<': signed/unsigned mismatch
-  GroupReverse.vcxproj -> C:\Users\Travis\Documents\School Related\4883_Programming_Techniques\GroupReverse\Debug\GroupReverse.exe
+c:\users\travis\documents\school_related\4883_programming_techniques\groupreverse\groupreverse\groupreverse.cpp(22): warning C4018: '<': signed/unsigned mismatch
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\utility(41): error C2100: illegal indirection
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility(3815): note: see reference to function template instantiation 'void std::iter_swap<_BidIt,_BidIt>(_FwdIt1,_FwdIt2)' being compiled
+          with
+          [
+              _BidIt=char,
+              _FwdIt1=char,
+              _FwdIt2=char
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility(3860): note: see reference to function template instantiation 'void std::_Reverse_unchecked1<_BidIt>(_BidIt,_BidIt,std::integral_constant<size_t,0>)' being compiled
+          with
+          [
+              _BidIt=char
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility(3867): note: see reference to function template instantiation 'void std::_Reverse_unchecked<_Iter>(const _BidIt,const _BidIt)' being compiled
+          with
+          [
+              _Iter=char,
+              _BidIt=char
+          ]
+  c:\users\travis\documents\school_related\4883_programming_techniques\groupreverse\groupreverse\groupreverse.cpp(24): note: see reference to function template instantiation 'void std::reverse<char>(const _BidIt,const _BidIt)' being compiled
+          with
+          [
+              _BidIt=char
+          ]

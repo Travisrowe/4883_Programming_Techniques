@@ -1,0 +1,35 @@
+9_20 Stacks and Queues
+UVa ship container stack problem
+vector<stack> Term;
+cin >> c;
+viableStack is where c <= viableStack.top
+check difference between the top of all stacks and c, put c on the stack with the least difference
+
+
+RPN = Reverse Polish Notation - used in calculators. 
+    e.g.) 2 3 + instead of 2 + 3
+    Uses a stack to find the answer. It pushes all numbers until a symbol comes along
+    then it pops the top two numbers and performs an operation on them, then pushes the answer onto the stack and repeats
+    
+    a way of programming this is to cin to a string and check if string[0] isDigit
+    string token;
+    cin >> token;
+    while(token != "=")
+    {
+        int i = 0;
+        int sum = 0;
+        if(isDigit(token[i]))
+            for(i to token.length)
+            {
+                //Use Horner's Rule
+                sum = sum * 10 + token[i++] - 48;
+            }
+            cin >> token;
+    }
+    
+    Horner's Rule: 123 = (1 * 10 + 2) * 10 + 3
+    Applies to polynomials
+    3x^4 + 7x^3 + 9x^2 - 18x + 10
+    (((3x + 7)x + 9)x - 18)x + 10
+    
+    Exam over everything up to problem 9 (stacks)
