@@ -1,0 +1,31 @@
+Maps are similar to dictionary in python
+
+Map A;
+A["Nice"] = 1; //searches map A for "Nice", if it's not in the map, it adds "Nice" to the map and assigns it as 1
+
+Map is actually a red-black tree, which has an O(log(n)) search time
+Unordered Map uses a Hash table, which has an O(1) search time
+    Hash tables use a lot of memory (more than twice the size of N), so in huge datasets it could be too much memory...
+
+UVA 10226 Hardwood Species
+    int T;
+    string species;
+    cin >> T; cin.ignore(); //ignores end of line
+    getline(cin, species); //gets blank line 
+    for(int i = 0; i < T; i++)
+    {
+        Map<string, int> A;
+        int total = 0;
+        getline(cin, species); //gets first tree
+        while(species != "")
+        {
+            A[species]++;
+            total++;
+        }
+        
+        iter *;
+        for(iter = A.begin(); iter != A.end(); iter++)
+        {
+            cout << iter->first << ": " << (double)iter->second / total << '\n';
+        }
+    }

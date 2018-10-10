@@ -1,0 +1,33 @@
+Priority Queues - queue in which the first element is always the greatest element in the queue
+    Implemented using Heaps, which is a compact(leaves filled left to right), complete tree
+        First index of Heap is 1, to get left you multiply index by two, right is times 2 + 1
+            SPEED NOTE: Instead of *2, do a left shift
+            
+        In Max Heap, left and right child of any node must be less than the node, so the greatest element is on top. In a min heap, the smallest element is on top.
+        
+        Heap is used to store Max and Min solutions to algorithms (e.g. Shortest Path algorithm, etc.)
+            Note: if you write code for Max but need a Min heap, you can take the negative of all data and store that in the Max heap.
+                Then take the negative of the already-negative data whenever you pull it back out
+        
+        Class Heap
+        {
+            Heapify();
+        public:
+            Insert();
+            Extract_Top(); //removes Max (or Min) value and removes it from heap.
+            DecreaseKey(int index, int value); //decreases node at index to specified value, which is implied to be less than the original key
+        }
+        
+Add All problem
+    Should always add the least two numbers, so load them into a heap
+    //load into heap
+    while(H.size() > 1 )
+    {
+        a = H.top();
+        H.pop();
+        b = H.top();
+        H.pop();
+        c = a + b;
+        H.push(c);
+        cost += c;
+    }
