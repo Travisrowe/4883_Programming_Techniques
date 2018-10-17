@@ -1,0 +1,9 @@
+Hay field 10295 problem
+	cin >> name >> val
+	myMap[name] = val;
+	
+	myMap.find(word); //if iterator == myMap.end(), word not found
+	
+	if you shift start of snowflakes, erase everything in hash up to start
+	
+Hash tables are hard to iterate through because Hash tables are used if you know what keys are in it
