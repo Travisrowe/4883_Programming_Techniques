@@ -1,2 +1,5 @@
 ﻿  Source.cpp
-  BasesAreLoaded.vcxproj -> C:\Users\Travis\Documents\School Related\4883_Programming_Techniques\BasesAreLoaded\Debug\BasesAreLoaded.exe
+c:\users\travis\documents\school related\4883_programming_techniques\basesareloaded\basesareloaded\source.cpp(52): error C2665: 'std::stol': none of the 2 overloads could convert all the argument types
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\string(339): note: could be 'long std::stol(const std::wstring &,size_t *,int)'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\string(197): note: or       'long std::stol(const std::string &,size_t *,int)'
+  c:\users\travis\documents\school related\4883_programming_techniques\basesareloaded\basesareloaded\source.cpp(52): note: while trying to match the argument list '(std::string, size_t, int)'

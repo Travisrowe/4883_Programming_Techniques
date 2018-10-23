@@ -10,29 +10,45 @@ using namespace std;
 
 struct Fraction
 {
-	int numerator;
-	int denominator;
+	long long numerator;
+	long long denominator;
 
-	Fraction(int n, int d) { numerator = n; denominator = d; }
-	//void InsertLeft;
+	Fraction(long long n, long long d) { numerator = n; denominator = d; }
 };
+
+Fraction CalculateNext(Fraction l, Fraction r, Fraction curr, string inp)
+{
+	if (inp[0] == 'R')
+	{
+		l = curr;
+		curr.numerator = curr.numerator + r.numerator;
+		curr.denominator = curr.denominator + r.denominator;
+	}
+	else if (inp[0] == 'L')
+	{
+		r = curr;
+		curr.numerator = curr.numerator + l.numerator;
+		curr.denominator = curr.denominator + l.denominator;
+	}
+	else
+		return curr;
+	return CalculateNext(l, r, curr, inp.substr(1));
+}
 
 int main()
 {
 	int N;
 	cin >> N;
-
-	const Fraction ZERO(0, 1);
-	const Fraction INFIN(1, 0);
-
-	vector<Fraction> tree;
-	Fraction fract(1, 1);
-	tree.push_back(fract);
-
+	
 	for (int i = 0; i < N; i++)
 	{
+		Fraction left(0, 1);
+		Fraction right(1, 0);
+		Fraction current(1, 1);
 		string inp;
 		cin >> inp;
-		if (inp.length() > log( (double)tree.size() )); //needs more inserts
+		
+		current = CalculateNext(left, right, current, inp);
+		cout << current.numerator << "\/" << current.denominator << '\n';
 	}
 }

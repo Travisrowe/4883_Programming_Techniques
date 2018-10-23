@@ -2,16 +2,17 @@
 
 #include <iostream>
 #include <string>
+#include <boost/lexical_cast.hpp>
 using namespace std;
 
-string convertToBaseB(unsigned long u1, int b)
+string convertToBaseB(long baseTenNum, int b)
 {
 	string Nnum = "";
-	while (u1 != 0)
+	while (baseTenNum != 0)
 	{
-		int digit = u1 % b;
+		int digit = baseTenNum % b;
 		Nnum += digit + '0';
-		u1 /= b;
+		baseTenNum /= b;
 	}
 	return Nnum;
 }
@@ -26,32 +27,35 @@ int main()
 {
 	int Obase, Nbase;
 	string Onum, Nnum;
-	unsigned long u1;
+	long baseTenNum;
 	while (cin >> Obase)
 	{
 		cin >> Nbase >> Onum;
-		//convert string to int to check if number is legal
-		int tempNum = std::stoi(Onum); 
 		bool isLegal = true;
-		while (tempNum > 0 && isLegal)
-		{
-			//ensure each digit is less than the base it is in
-			if (tempNum % 10 >= Obase)
-				isLegal = false;
-			tempNum /= 10;
-		}
+
+		////convert string to int to check if number is legal
+		//int tempNum = std::stoi(Onum, nullptr, Obase); 
+		//while (tempNum > 0 && isLegal)
+		//{
+		//	//ensure each digit is less than the base it is in
+		//	if (tempNum % 10 >= Obase)
+		//		isLegal = false;
+		//	tempNum /= 10;
+		//}
+
+		long temp = std::stol("126", nullptr, 5);
 
 		if (isLegal)
 		{
 			//stoul converts a string to an unsigned long, given the base of the string
-			u1 = std::stoul(Onum, nullptr, Obase);
-			//now u1 is our number in base 10
+			baseTenNum = std::stol(Onum, nullptr, Obase);
+			//now baseTenNum is our number in base 10
 
 			if (Nbase == 10)
-				PrintOutput(Obase, Nbase, Onum, std::to_string(u1));
+				PrintOutput(Obase, Nbase, Onum, std::to_string(baseTenNum));
 			else
 			{
-				Nnum = convertToBaseB(u1, Nbase);
+				Nnum = convertToBaseB(baseTenNum, Nbase);
 				PrintOutput(Obase, Nbase, Onum, Nnum);
 			}
 		}
