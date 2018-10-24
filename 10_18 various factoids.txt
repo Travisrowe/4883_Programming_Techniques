@@ -1,0 +1,13 @@
+Bases are loaded
+	Horner's Rule is used for conversion from any base to base 10
+	
+Super long sums
+	put both numbers into a vector<int> of size M
+	make a solution vector<int> of size M + 1
+	write a simple addition algorithm with remainders and stuff
+	
+Switching vectors to list
+	write a vector using iterators and it switches to list like *that*
+	
+Stern-Brocot Tree
+	"Use recursion" he sez. "It's easy if you use recursion." he sez

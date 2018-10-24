@@ -1,0 +1,33 @@
+ Sieve of Erastosthenes - calculating list of prime numbers
+	Build an array of all indices 1 to 1,000,000, ARRAY_MAX
+	Mark all even numbers false - not prime
+	loop through all unmarked numbers, n
+		mark n as true
+		mark all multiples of n up to ARRAY_MAX as false
+		
+bitset<1000000> bs;
+vector<int> primes;
+
+void sieve(long long upperbound)
+{
+	sieve.size = upperbound++;
+	bs.set(); //set all to 1
+	for(long long i = 2; i <= sieve.size(); i++)
+	{
+		if(bs[i] == 1)
+		{
+			for(long long j = i * i; j < sieve.size(); j += i)
+				b[j] = 0;
+			primes.push_back(i);
+		}
+	}
+}
+
+to check if number greater than ARRAY_MAX is prime you have to iterate primes from 2 to sqrt(N)
+
+int gcd(int a, int b)
+{
+	return b? gcd(b, a%b):a;
+}
+
+gcd(a, b) * lcm(a * b) = a * b

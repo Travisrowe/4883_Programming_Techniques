@@ -16,7 +16,6 @@ int main()
 		for (int j = 0; j < n; j++)
 		{
 			cin >> snowflake;
-			int count = 0;
 			mapIter iter;
 			iter = myMap.find(snowflake);
 			if (iter != myMap.end()) //snowflake was found

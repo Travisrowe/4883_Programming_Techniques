@@ -2,10 +2,19 @@
 
 #include <iostream>
 #include <string>
-#include <boost/lexical_cast.hpp>
+#include <sstream>
 using namespace std;
 
-string convertToBaseB(long baseTenNum, int b)
+
+int charVal(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (int)c - '0';
+	else
+		return (int)c - 'A' + 10;
+}
+
+string convertToBaseB(int baseTenNum, int b)
 {
 	string Nnum = "";
 	while (baseTenNum != 0)
@@ -17,6 +26,25 @@ string convertToBaseB(long baseTenNum, int b)
 	return Nnum;
 }
 
+int convertToBaseTen(string num, int base)
+{
+	int deciNum = 0;
+	int len = num.length();
+	int power = 1;
+	for (int i = 1; i <= len; i++)
+	{
+		if (charVal(num[len - i]) >= base)
+		{
+			cout << num << " is an illegal base " << base << " number\n";
+			return -1;
+		}
+		deciNum += charVal(num[len - i]) * power;
+		power = power * base;
+	}
+	return deciNum;
+}
+
+
 void PrintOutput(int Obase, int Nbase, string Onum, string Nnum)
 {
 	cout << Onum << " base " << Obase << " = " << Nnum << " base " << Nbase << '\n';
@@ -26,40 +54,21 @@ void PrintOutput(int Obase, int Nbase, string Onum, string Nnum)
 int main()
 {
 	int Obase, Nbase;
+	string line;
 	string Onum, Nnum;
-	long baseTenNum;
-	while (cin >> Obase)
+	while (getline(cin, line))
 	{
-		cin >> Nbase >> Onum;
-		bool isLegal = true;
+		stringstream(line) >> Obase >> Nbase >> Onum;
 
-		////convert string to int to check if number is legal
-		//int tempNum = std::stoi(Onum, nullptr, Obase); 
-		//while (tempNum > 0 && isLegal)
-		//{
-		//	//ensure each digit is less than the base it is in
-		//	if (tempNum % 10 >= Obase)
-		//		isLegal = false;
-		//	tempNum /= 10;
-		//}
+		//convert our Onum to an integer in base ten
+		int baseTenNum = convertToBaseTen(Onum, Obase);
 
-		long temp = std::stol("126", nullptr, 5);
-
-		if (isLegal)
+		if (Nbase == 10)
+			PrintOutput(Obase, Nbase, Onum, std::to_string(baseTenNum));
+		else if(baseTenNum != -1) //-1 if illegal number
 		{
-			//stoul converts a string to an unsigned long, given the base of the string
-			baseTenNum = std::stol(Onum, nullptr, Obase);
-			//now baseTenNum is our number in base 10
-
-			if (Nbase == 10)
-				PrintOutput(Obase, Nbase, Onum, std::to_string(baseTenNum));
-			else
-			{
-				Nnum = convertToBaseB(baseTenNum, Nbase);
-				PrintOutput(Obase, Nbase, Onum, Nnum);
-			}
+			Nnum = convertToBaseB(baseTenNum, Nbase);
+			PrintOutput(Obase, Nbase, Onum, Nnum);
 		}
-		else 
-			cout << Onum << " is an illegal base " << Obase << " number\n";
 	}
 }
