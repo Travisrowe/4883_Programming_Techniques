@@ -1,3 +1,5 @@
 ﻿  Source.cpp
-c:\users\travis\documents\school_related\4883_programming_techniques\continuedfractions\continuedfractions\source.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\continuedfractions\continuedfractions\source.cpp(43): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\continuedfractions\continuedfractions\source.cpp(46): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\continuedfractions\continuedfractions\source.cpp(48): warning C4018: '<': signed/unsigned mismatch
   ContinuedFractions.vcxproj -> C:\Users\Travis\Documents\School_Related\4883_Programming_Techniques\ContinuedFractions\Debug\ContinuedFractions.exe

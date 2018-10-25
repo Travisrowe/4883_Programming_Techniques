@@ -17,28 +17,39 @@ struct Fraction
 
 int main()
 {
-	int n, d;
+	int n, d, line = 1;
 	while (cin >> n)
 	{
+		/*if (line++ == 44)
+			int x = 0;*/
 		vector<int> contFraction;
 		cin >> d;
 		Fraction fract(n, d);
-		while (d > 1)
+		while (d > 0)
 		{
 			if (n >= d)
 			{
 				contFraction.push_back((int)n / d);
 				n = n % d;
 			}
-
+			else
+				contFraction.push_back(0);
 			//flip fraction
 			int temp = n;
 			n = d;
 			d = temp;
 		}
-		cout << "[" << contFraction[0] << ";";
-		for (int i = 1; i < contFraction.size(); i++)
-			cout << contFraction[i] << ",";
-		cout << "]\n";
+		cout << "[";
+		for (int i = 0; i < contFraction.size(); i++)
+		{
+			cout << contFraction[i];
+			if (i == 0 && i < contFraction.size() - 1)
+				cout << ";";
+			else if(i < contFraction.size() - 1)
+				 cout << ",";
+			else
+				cout << "]\n";
+		}
+		
 	}
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <algorithm> //includes reverse method
 using namespace std;
 
 
@@ -14,31 +15,37 @@ int charVal(char c)
 		return (int)c - 'A' + 10;
 }
 
-string convertToBaseB(int baseTenNum, int b)
+string convertToBaseB(long long baseTenNum, int b)
 {
 	string Nnum = "";
 	while (baseTenNum != 0)
 	{
 		int digit = baseTenNum % b;
-		Nnum += digit + '0';
+		if (digit < 10)
+			Nnum += digit + '0';
+		else
+			Nnum += digit - 10 + 'A';
 		baseTenNum /= b;
 	}
+	//Num is backwards, reverse it
+	reverse(Nnum.begin(), Nnum.end());
 	return Nnum;
 }
 
-int convertToBaseTen(string num, int base)
+long long convertToBaseTen(string num, int base)
 {
-	int deciNum = 0;
+	long long deciNum = 0;
 	int len = num.length();
-	int power = 1;
+	long long power = 1;
 	for (int i = 1; i <= len; i++)
 	{
-		if (charVal(num[len - i]) >= base)
+		int val = charVal(num[len - i]);
+		if (val >= base)
 		{
 			cout << num << " is an illegal base " << base << " number\n";
 			return -1;
 		}
-		deciNum += charVal(num[len - i]) * power;
+		deciNum += val * power;
 		power = power * base;
 	}
 	return deciNum;
@@ -61,9 +68,9 @@ int main()
 		stringstream(line) >> Obase >> Nbase >> Onum;
 
 		//convert our Onum to an integer in base ten
-		int baseTenNum = convertToBaseTen(Onum, Obase);
+		long long baseTenNum = convertToBaseTen(Onum, Obase);
 
-		if (Nbase == 10)
+		if (baseTenNum != -1 && Nbase == 10)
 			PrintOutput(Obase, Nbase, Onum, std::to_string(baseTenNum));
 		else if(baseTenNum != -1) //-1 if illegal number
 		{
