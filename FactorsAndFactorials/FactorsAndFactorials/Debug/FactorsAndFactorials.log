@@ -1,11 +1,5 @@
 ﻿  Source.cpp
-c:\users\travis\documents\school_related\4883_programming_techniques\factorsandfactorials\factorsandfactorials\source.cpp(15): warning C4244: 'argument': conversion from '__int64' to 'size_t', possible loss of data
 c:\users\travis\documents\school_related\4883_programming_techniques\factorsandfactorials\factorsandfactorials\source.cpp(18): warning C4244: 'argument': conversion from '__int64' to 'size_t', possible loss of data
-c:\users\travis\documents\school_related\4883_programming_techniques\factorsandfactorials\factorsandfactorials\source.cpp(19): warning C4244: 'argument': conversion from '__int64' to 'const _Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-c:\users\travis\documents\school_related\4883_programming_techniques\factorsandfactorials\factorsandfactorials\source.cpp(28): warning C4101: 'm': unreferenced local variable
-c:\users\travis\documents\school_related\4883_programming_techniques\factorsandfactorials\factorsandfactorials\source.cpp(28): warning C4101: 'n': unreferenced local variable
+c:\users\travis\documents\school_related\4883_programming_techniques\factorsandfactorials\factorsandfactorials\source.cpp(21): warning C4244: 'argument': conversion from '__int64' to 'size_t', possible loss of data
+c:\users\travis\documents\school_related\4883_programming_techniques\factorsandfactorials\factorsandfactorials\source.cpp(22): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
   FactorsAndFactorials.vcxproj -> C:\Users\Travis\Documents\School_Related\4883_Programming_Techniques\FactorsAndFactorials\Debug\FactorsAndFactorials.exe
