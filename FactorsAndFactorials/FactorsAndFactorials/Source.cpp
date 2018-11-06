@@ -28,7 +28,7 @@ void SetSieveOfEratosthenes(set<int> &primes)
 
 int main()
 {
-	int m, n;
+	int decrN, n;
 	set<int> primes; //list of prime numbers up to 1,000,000
 	SetSieveOfEratosthenes(primes);
 	
@@ -37,40 +37,60 @@ int main()
 	cin >> n;
 	while (n != 0)
 	{
-		primeMultiples.assign(15, 0); //fill vector with 15 0s
-		m = n;
-		while (m > 1)
+		primeMultiples.assign(n, 0); //fill vector with n 0s
+		int primeMultSize = 0; //used to keep from printing trailing 0s
+		decrN = n; //Decrementing N
+		while (decrN > 1)
 		{
-			set<int>::iterator iter = primes.find(m);
-			if (iter != primes.end()) // m is a prime number
+			int index;
+			set<int>::iterator iter = primes.find(decrN);
+			if (iter != primes.end()) // decrN is a prime number
 			{
 				//index that iter is pointing to
-				int index = distance(primes.begin(), iter); 
+				index = distance(primes.begin(), iter); 
 				primeMultiples[index]++;
-				m--;
 			}
-			else //m is a multiple of a prime number, we must find that number
+			else //decrN is a multiple of a prime number, we must find that number
 			{
 				set<int>::iterator it = primes.begin();
-				int o = m % (int)*it;
-				while (o != 0 && it != primes.end())
-				{
-					it++;
-					o = m % (int)*it;
-				} //the prime which m is divisible by has been found
-				int index = distance(primes.begin(), it);
-				primeMultiples[index]++;
-				m = m / (int)*it;
-			}
-		}
+				int m = decrN;
+				while (m > 1)
+				{ //find all primes within the current factorial
+					int o = m % (int)*it;
+					while (o != 0 && it != primes.end())
+					{ //find the prime which m is divisible by
+						it++;
+						o = m % (int)*it;
+					}
+
+					//index that iter is pointing to
+					index = distance(primes.begin(), it);
+					primeMultiples[index]++;
+
+					//divide m by the prime it's divisible by
+					m = m / (int)*it;
+				}//end while m
+			}//end else
+
+			if (index > primeMultSize)
+				primeMultSize = index;
+
+			decrN--;
+		} //end while decrN
 		cout.width(3);
-		cout << right << n << "! = ";
-		for (auto i : primeMultiples)
+		cout << right << n << "! =";
+		for (int i = 0; i <= primeMultSize; i++)
 		{
-			cout.width(3);
+			if (i == 0 || i % 15 != 0)
+				cout.width(3);
+			else
+			{
+				cout << '\n';
+				cout.width(9);
+			}
 			cout << right << primeMultiples[i];
 		}
 		cout << '\n';
 		cin >> n;
-	}
+	}//end while n
 }
