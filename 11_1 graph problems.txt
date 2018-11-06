@@ -1,0 +1,27 @@
+Given an array of numbers, find the longest sub-array that contains at most two unique values
+
+Area
+	take your point and find the distance to each of the four corners. 
+	If each distance is less than a, you've got a bingo
+	
+Treasure
+	Read in input cleanly! Then use Horner's Rule
+	
+Is this integration?
+	Take Simpson's picture
+	Angle BAC is 90
+	Angle BAF is 60
+	Angle BEC is 60
+	Therefore, Angle BEF is 30
+	
+	Find area of square in center
+	Then take the cone BEF (including the rounded bit)
+		area of cone is pi * s^2 * 30/360
+	Then find area of triangle and subtract
+	
+	Then find length EF
+	
+Heron's Rule
+	calculate area of a triangle where you know the length of the sides, a, b, and c.
+	s = (a + b + c) / 2 //half of the triangle's perimeter
+	A = sqrt(s(s-a)(s-b)(s-c))
