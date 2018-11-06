@@ -8,27 +8,25 @@ using namespace std;
 int main()
 {
 	string input;
-	getline(cin, input, ',');
+	const string DELIM = ",";
+	getline(cin, input); //input is the full line
 	while (input != "END")
 	{
-		stringstream ss;
-		ss << input;
-		int mag; //magnitude
-		string dir; //direction
-		ss >> mag >> dir;
-
+		size_t pos = input.find(DELIM);
 		double x = 0;
 		double y = 0;
-
-		bool endOfLine = false;
-		if (dir[dir.length() - 1] == '.')
+		while (pos != 0)
 		{
-			endOfLine = true; //will reset coordinates
-			dir = dir.substr(0, dir.length() - 1); //cut off the period
+			stringstream ss;
+			string token = input.substr(0, pos);
+			input = input.substr(pos + 1);
+			ss << token;
+			int mag; //magnitude
+			string dir; //direction
+			ss >> mag >> dir;
+
+			cout << mag << dir << endl;
 		}
-
-		cout << mag << dir << endl;
-
-		getline(cin, input, ',');
+		getline(cin, input);
 	}
 }
