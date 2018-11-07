@@ -1,9 +1,10 @@
 //IsThisIntegration.cpp : UVa 10209 : Travis Rowe : Thiefone18 : 11/5/18
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
-#define PI 3.14159265
+#define PI 3.14159265358979323846
 
 int main()
 {
@@ -14,7 +15,7 @@ int main()
 
 		//calculate center, striped area
 		//find area of square + area of slivers outside the square
-		long double FE = 2.0 * (a * sin(30.0 * PI / 180.0));
+		long double FE = 2.0 * (a * sin(15.0 * PI / 180.0));
 		long double centerSquareArea = FE * FE;
 		long double coneBEFArea = PI * a * a * (30.0 / 360.0);
 
@@ -22,7 +23,7 @@ int main()
 		long double s = (2.0 * a + FE) / 2.0;
 		long double triangleBEFArea = sqrt(s * (s - FE) * (s - a) * (s - a));
 		long double centerSliversArea = (coneBEFArea - triangleBEFArea);
-		long double centerArea = centerSquareArea + centerSliversArea * 4;
+		long double centerArea = centerSquareArea + (centerSliversArea * 4);
 
 		//calculate dotted region
 		//find (area of triangle - area of inner sliver) + area of slivers outside of triangle
