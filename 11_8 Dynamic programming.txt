@@ -1,0 +1,48 @@
+Greedy algorithm
+	Taking what seems the most obvious solution instead of calculating
+		EX) in shortest path algorithm. Get to a node and try to figure out where to go next; you
+			decide to take the path with the shortest edge from this node. NOT ALWAYS RIGHT
+		
+		EX) 27.93 in least amount of coins. You start by subtracting coin with the highest value
+			as many times as possible. This actually does work
+			
+Divide & Conquer algorithm
+	Ex) merge sort, quick sort
+	
+Top-Down dynamic programming
+	Fibonacci
+		this is a mofukka of O(2^n). That's bihh!
+		You can help this by keeping a static vector<int> F;
+		F.assign(n, 0);
+		F[0] = 1; F[1] = 1; F[2] = 3;
+		Then you check if F has your index, if not you calculate the Fibonacci(j) and store it in index j
+		This is called memo-ization, you make memos of what you've done
+		
+		This makes the O(n)! Actually approximately O(2n) because you go down the list then (recursively)
+		go back up it.
+		
+Bottom-Up dynamic programming
+	Fibonacci
+		calculate the vector first
+	
+	Pascal's Triangle
+							1
+						1		1
+					1		2		1
+				1		3		3		1
+			1		4		6		4		1
+			
+		Defined recursively where the rth element on the nth row (n, r) = (n - 1, r - 1) + (n - 1, r);
+		
+Longest common subsequence
+	you have two sequences of vals
+		a b c c b a d e f
+		a a c c b d e f g h c c
+		
+		sequence 1 has length i, 2 has length j
+		you make a grid with i rows and j cols
+		cell[i, j] = length of longest common subsequence
+		so if(seq1[i] == seq2[j])
+			grid[i, j]= grid[i - 1, j - 1] + 1;
+			
+p. 103 J Cadane (sp?) algorithm
