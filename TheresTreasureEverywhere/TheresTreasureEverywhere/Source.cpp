@@ -1,8 +1,8 @@
 //TheresTreasureEverywhere.cpp : UVa 587 : Travis Rowe : Thiefone18 : 11/4/18
 #include <iostream>
+#include <iomanip>
 #include <string>
-#include <vector>
-#include <sstream>
+#include <cmath>
 using namespace std;
 
 bool IsDigit(char c)
@@ -70,9 +70,10 @@ int main()
 		}
 
 		double distance = sqrt(x * x + y * y);
-		printf("Map #%d\n", mapNum++);
-		printf("The treasure is located at (%.3f, %.3f).\n", x, y);
-		printf("The distance to the treasure is %.3f.\n\n", distance);
+		cout << fixed << setprecision(3);
+		cout << "Map #" << mapNum++ << '\n';
+		cout << "The treasure is located at (" << x << ',' << y << ").\n";
+		cout << "The distance to the treasure is " << distance << ".\n\n";
 		getline(cin, input);
 	}
 }
