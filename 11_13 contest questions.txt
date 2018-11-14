@@ -1,0 +1,3 @@
+sort has three parameters, with the third being any boolean value.
+	For example, you can write your own boolean function and pass it into sort, and it will sort your
+	container based on that function being true or false.
