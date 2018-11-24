@@ -1,0 +1,26 @@
+longest common subsequence
+	the ith prefix is defined as the first i characters of the sequence
+	e.g. sequence = "zyabxftv", sequence(4) = "zyab"
+	
+	Optimal substructure of an LCS
+		Let C = x1x2x3... xm and Y = y1y2y3... yn and let Z = z1z2z3... zk be any LCS of X and Y
+		if xm = yn, append that letter at zk.
+		this can be done using two loops, one through x and one through y, making this an n^2 algorithm
+		
+	You actually store the length of the LCS in your solution matrix Z. The reason you don't store the
+	sub-sequence is because there can be multiple answers. While the lengths of these answers are equivalent
+	the actual sequences are not.
+	
+Range Sum Query (RSQ)
+	For 1D RSQ problem See Jackpot problem and Halim % Halim p. 103
+	
+	2D problem 
+		given a matrix of numbers, find the sum from any given grid i,j to another grid k,l.
+		start by storing in every grid, the sum from 0,0 to i,j, where i,j is the index of that grid
+		Then, when you want to find the sum of square i,j to k,l
+			A = k,l
+			B = i - 1, j - 1
+			C = k, j - 1
+			D = i - 1, l
+			
+			Answer = A - C - (D - B)

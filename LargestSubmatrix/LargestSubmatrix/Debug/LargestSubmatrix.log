@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\users\travis\documents\school_related\4883_programming_techniques\largestsubmatrix\largestsubmatrix\source.cpp(30): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\largestsubmatrix\largestsubmatrix\source.cpp(37): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\largestsubmatrix\largestsubmatrix\source.cpp(50): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\largestsubmatrix\largestsubmatrix\source.cpp(52): warning C4018: '<': signed/unsigned mismatch
+  LargestSubmatrix.vcxproj -> C:\Users\Travis\Documents\School_Related\4883_Programming_Techniques\LargestSubmatrix\Debug\LargestSubmatrix.exe

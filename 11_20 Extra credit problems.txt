@@ -1,0 +1,44 @@
+Robot Motion
+	Only requires 2D vector
+	
+Theseus and the Minotaur
+	Need an adjacency list, not an adjacency matrix
+	
+Vertex
+	Use either depth first search or breadth first search
+	Create a class called Graph
+	{
+		void addEdge();
+		void BFS() or void DFS();
+	}
+	
+Adjacency list vs Matrix
+	Matrix
+		defined as vector<vector<int>> A(n, vector<int>(m, 0)); //how to initialize 2D matrix! finally!
+		use when you have a dense graph OR when it's small, n < 20 or so.
+			dense means O(n^2) edges
+			sparse means O(n) edges	
+	List
+		Historically an array of pointers, now it's a vector<vector<int>> A;
+		
+BFS
+	uses queue, FIFO
+	
+	//level-order traversal of tree
+	queue Q
+	Q.push(A); //A is root of tree
+	while(!Q.empty())
+	{
+		T = Q.top();
+		Q.pop();
+		Q.push(T.left);
+		Q.push(T.right);
+		Print(T);
+	}
+	//problem is introduced when you're not using a tree but a graph. In a graph, you have to make sure you haven't processed the current node before
+	//solution is to color the nodes. 
+	//	White node has never been seen
+	//	Grey node is in the queue
+	//	Black node has been in and out of the queue
+DFS
+	Uses stack because of recursion

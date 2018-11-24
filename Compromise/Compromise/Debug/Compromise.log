@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\users\travis\documents\school_related\4883_programming_techniques\compromise\compromise\source.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\compromise\compromise\source.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\compromise\compromise\source.cpp(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\travis\documents\school_related\4883_programming_techniques\compromise\compromise\source.cpp(79): warning C4018: '<': signed/unsigned mismatch
+  Compromise.vcxproj -> C:\Users\Travis\Documents\School_Related\4883_Programming_Techniques\Compromise\Debug\Compromise.exe
