@@ -1,47 +1,94 @@
-//Vertex : UVa 280 : Travis Rowe : Thiefone18 : 11/21/18
+//Vertex : UVa 280 : Travis Rowe : Thiefone18 : 11/27/18
 
-//This is an adjacency graph problem. In it we will use either a breadth-first
-//search or depth-first search, along with enum types to color the nodes we've
-//never visited (white), visited but not explored (grey), and explored completely
-//(black)
+//Here we use a Breadth-First-Search (or DFS, either way) to find the answer.
+//Note that we use two vectors. The first is 
+//	vector<vector<int>> graph
+//and the second is
+//	vector<string> colors
+//it's kind of nice to store colors in another vector rather than messing
+//with enumerated types.
 
-#include <iostream>
 #include <vector>
+#include <queue>
+#include <string>
+#include <iostream>
 using namespace std;
 
-struct Vertex
+//implement a Breadth-First-Search to see what vertices we can find
+void BFS(vector<vector<int>> &G, vector<string> &colors, int s)
 {
-	vector<int> edges;
-
-};
-
-class AdjacencyGraph 
-{
-	vector<vector<int>> graph;
-
-public:
-	AdjacencyGraph(int N)
+	queue<int> Q;
+	Q.push(s);
+	while (!Q.empty())
 	{
-		graph.resize(N + 1);
+		int v = Q.front();
+		Q.pop();
+		for (auto u : G[v]) //u is all the adjacent vertices of v
+		{
+			if (colors[u] == "white") //if u has not been found before
+			{
+				colors[u] = "grey"; //u has been found but not handled
+				Q.push(u);
+			}
+		}
+		/*Note that this line is commented out solely because this UVa problem does not seem to consider the start vertex, s, as being inherently accessible. We still find which vertices are innaccessible based on whether they're white, so that's fine.*/
+		//colors[v] = "black"; //v has been completely handled
 	}
-	void AddEdge(int p, int q)
-	{
-		AdjacencyGraph::graph[p].push_back(q);
-	}
-
-	void BFS();
-};
+}
 
 int main()
 {
-	int N; //number of vertices
-	cin >> N;
-	while (N != 0) //graph loop, where N is the number of vertices in this graph
+	int n;
+	cin >> n; //number of vertices
+	while (n != 0) //full graph loop
 	{
-		for (int i = 1; i <= N; i++)
+		vector<vector<int>> graph(n + 1); //n + 1 because 0 index is not used
+		int v, e;
+		cin >> v;
+		while (v != 0) //read in vertexes of this graph
 		{
-
+			cin >> e;
+			while (e != 0) //read in edges of this vertex
+			{
+				graph[v].push_back(e);
+				cin >> e;
+			}
+			cin >> v;
 		}
-		cin >> N;
+		// graph is read in
+
+		int t; //number of starting vertices to test
+		cin >> t;
+		for (int i = 0; i < t; i++) //handle different start vertices
+		{
+			//note again the n + 1 because index 0 is not used
+			vector<string> colors(n + 1, "white"); //white, grey, or black depending on if the node has been searched
+			int startVertex;
+			cin >> startVertex;
+			BFS(graph, colors, startVertex); //find which vertices are colored black
+
+			vector<int> whiteVerts;
+
+			//skip index 0
+			for (int j = 1; j <= n; j++) //push vertices that are white onto whiteVerts
+			{
+				if (colors[j] == "white")
+					whiteVerts.push_back(j);
+			}
+			//print num of white vertices followed by which vertices they are
+			cout << whiteVerts.size() << ' ';
+			for (int k = 0; k < whiteVerts.size(); k++)
+			{
+				cout << whiteVerts[k];
+				if (k < whiteVerts.size() - 1)
+					cout << ' ';
+				else
+					cout << '\n';
+			}
+			if (whiteVerts.size() == 0)
+				cout << '\n';
+		}
+
+		cin >> n;
 	}
 }
