@@ -1,6 +1,7 @@
 //Compromise : UVa 531 : Travis Rowe : Thiefone18 : 11/20/18
 
 //Longest Common Subsequence problem
+//this is incomplete according to UVa. I think it's good, who knows?
 
 #include <vector>
 #include <string>
@@ -11,8 +12,10 @@ using namespace std;
 int main()
 {
 	string inp;
+	int z = 1;
 	while (cin >> inp) //full test case loop
 	{
+		
 		//make 0 index unused to match the lcsLengthMatrix
 		vector<string> A = { "nullIndex" };
 		vector<string> B = { "nullIndex" };
@@ -54,15 +57,18 @@ int main()
 			}
 		}
 		
-		////print Matrix
-		//for (int r = 0; r < A.size(); r++)
-		//{
-		//	for (int c = 0; c < B.size(); c++)
-		//	{
-		//		cout << lcsLengthMatrix[r][c] << ' ';
-		//	}
-		//	cout << '\n';
-		//}
+		//print Matrix
+		/*if (z++ == 305)
+		{
+			for (int r = 0; r < A.size(); r++)
+			{
+				for (int c = 0; c < B.size(); c++)
+				{
+					cout << lcsLengthMatrix[r][c] << ' ';
+				}
+				cout << '\n';
+			}
+		}*/
 
 		//now our length matrix is filled, we just need to find the actual LCS
 		int r = A.size() - 1, c = B.size() - 1;
