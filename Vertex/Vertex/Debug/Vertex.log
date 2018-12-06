@@ -1,4 +1,1 @@
-﻿  Source.cpp
-c:\users\travis\documents\school_related\4883_programming_techniques\vertex\vertex\source.cpp(80): warning C4018: '<': signed/unsigned mismatch
-c:\users\travis\documents\school_related\4883_programming_techniques\vertex\vertex\source.cpp(83): warning C4018: '<': signed/unsigned mismatch
-  Vertex.vcxproj -> C:\Users\Travis\Documents\School_Related\4883_Programming_Techniques\Vertex\Debug\Vertex.exe
+﻿  Vertex.vcxproj -> C:\Users\Travis\Documents\School Related\4883_Programming_Techniques\Vertex\Debug\Vertex.exe
