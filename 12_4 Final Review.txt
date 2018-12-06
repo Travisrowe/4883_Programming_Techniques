@@ -1,0 +1,13 @@
+Final on Tuesday
+	Browse problems previously completed
+	He will ask little bits of several problems
+	Study the "Tricks of the Trade" of each problem
+	
+Wetlands of Florida
+	Loop until you find water
+		Use recursion to find adjacent water
+		Before you leave current (found) water, change it so that it's not "found" again
+		
+Erdos Numbers
+	Input is really an adjacency graph
+	To find Erdos number, start at Erdos and do a breadth-first search with a distance formula
