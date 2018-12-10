@@ -3,15 +3,17 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <cstdint>
+#include <stdint.h>
 
 using namespace std;
 
 struct Edge
 {
-	int toVert;
+	int index;
 	int latency;
 
-	Edge(int to, int lat) { toVert = to; latency = lat; }
+	Edge(int ind, int lat) { index = ind; latency = lat; }
 };
 
 int main()
@@ -30,8 +32,40 @@ int main()
 			int a, b, lat; //vertex a, vertex b, latency from a to b
 			cin >> a >> b >> lat;
 			graph[a].push_back(Edge(b, lat));
+			graph[b].push_back(Edge(a, lat));
 		}
 		//graph is read in
 
+		//dist is the distance from source node to node n.
+		//If no distance has been found from source to n, then dist holds INT_MAX
+		vector<int> dist(n, INT_MAX);
+
+		/*This algorithm is Djikstra's Shortest Path algorithm. 
+		See Hamlin & Hamlin p. 148*/
+		queue<Edge> que;
+		que.push(Edge(s, 0));
+		while (!que.empty())
+		{
+			int d = que.front().latency;
+			int u = que.front().index;
+			que.pop();
+
+			//if the current distance is less than the distance on file
+			if (d < dist[u])
+			{
+				//update distance on file
+				dist[u] = d;
+				//enqueue u's adjacent nodes
+				for (int j = 0; j < graph[u].size(); j++)
+				{
+					que.push(Edge(graph[u][j].index, dist[u] + graph[u][j].latency));
+				}
+			}
+		}
+		cout << "Case #" << i + 1 << ": ";
+		if (dist[t] < INT_MAX)
+			cout << dist[t] << '\n';
+		else
+			cout << "unreachable\n";
 	}
 }

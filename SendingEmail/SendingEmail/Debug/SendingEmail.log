@@ -1,0 +1,3 @@
+﻿  Source.cpp
+c:\users\travis\documents\school_related\4883_programming_techniques\sendingemail\sendingemail\source.cpp(57): warning C4018: '<': signed/unsigned mismatch
+  SendingEmail.vcxproj -> C:\Users\Travis\Documents\School_Related\4883_Programming_Techniques\SendingEmail\Debug\SendingEmail.exe

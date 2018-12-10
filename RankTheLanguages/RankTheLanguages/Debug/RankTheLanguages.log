@@ -1,0 +1,17 @@
+﻿  Source.cpp
+c:\users\travis\documents\school_related\4883_programming_techniques\rankthelanguages\rankthelanguages\source.cpp(64): warning C4018: '<': signed/unsigned mismatch
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(4034): error C2676: binary '-': 'const _Iter' does not define this operator or a conversion to a type acceptable to the predefined operator
+          with
+          [
+              _Iter=std::pair<char,int>
+          ]
+  c:\users\travis\documents\school_related\4883_programming_techniques\rankthelanguages\rankthelanguages\source.cpp(82): note: see reference to function template instantiation 'void std::sort<_Ty,bool(__cdecl *)(const std::pair<char,int> &,const std::pair<char,int> &)>(const _RanIt,const _RanIt,_Pr)' being compiled
+          with
+          [
+              _Ty=std::pair<char,int>,
+              _RanIt=std::pair<char,int>,
+              _Pr=bool (__cdecl *)(const std::pair<char,int> &,const std::pair<char,int> &)
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(4034): error C2672: '_Sort_unchecked': no matching overloaded function found
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(4034): error C2780: 'void std::_Sort_unchecked(_RanIt,_RanIt,iterator_traits<_Iter>::difference_type,_Pr)': expects 4 arguments - 3 provided
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\algorithm(3995): note: see declaration of 'std::_Sort_unchecked'
